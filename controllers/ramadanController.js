@@ -8,7 +8,7 @@ const getRamadanSchedules = expressAsyncHandler(async (req, res) => {
         //find out what is the current year from server
         const currentYear = new Date().getFullYear();
         //find schedule with current year
-        const schedules = await Ramadan.find({ year: currentYear })
+        const schedules = await Ramadan.findOne({ year: currentYear })
         res.status(200).json(schedules);
     } catch (err) {
         res.status(404).json({ message: err.message });

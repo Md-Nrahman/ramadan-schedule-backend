@@ -11,6 +11,8 @@ const ramadanSchema = new mongoose.Schema({
         required: true
     }
 
+},{
+    timestamps: true
 });
 
 const Ramadan = mongoose.model('Ramadan', ramadanSchema);
