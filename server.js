@@ -18,7 +18,7 @@ app.use(fileUpload());
 
 app.use(cors(
     {
-        origin: 'http://localhost:3000'
+        origin: 'https://ramadantimes.netlify.app/'
     }
 ));
 
