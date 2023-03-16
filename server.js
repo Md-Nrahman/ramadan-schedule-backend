@@ -1,6 +1,8 @@
 const express = require('express');
 const dotenv = require('dotenv');
 const app = express();
+const ramadanRoutes = require('./routes/ramadanRoutes');
+const fileUpload = require('express-fileupload');
 
 const mongoose = require('mongoose');
 
@@ -11,11 +13,16 @@ const cors = require('cors');
 dotenv.config();
 
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(fileUpload());
+
 app.use(cors(
     {
-        origin: 'http://localhost:4200'
+        origin: 'http://localhost:3000'
     }
 ));
+
+
 
 const connect=async()=>{
     try{
@@ -27,9 +34,9 @@ const connect=async()=>{
 }
 
 
-
+app.use('/ramadan', ramadanRoutes);
 
 app.listen(process.env.PORT, () => {
     connect();
-    console.log('Server started on port 3000');
+    console.log('Server started on port 5000');
 });

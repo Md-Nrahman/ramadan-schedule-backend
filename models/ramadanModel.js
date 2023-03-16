@@ -5,7 +5,7 @@ const ramadanSchema = new mongoose.Schema({
         type: Number,
         required: true
     },
-    date:{
+    dates:{
         //array of objects
         type: Array,
         required: true
