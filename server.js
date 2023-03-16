@@ -18,7 +18,7 @@ app.use(fileUpload());
 
 app.use(cors(
     {
-        origin: 'https://ramadantimes.netlify.app/'
+        origin: 'https://ramadantimes.netlify.app'
     }
 ));
 
